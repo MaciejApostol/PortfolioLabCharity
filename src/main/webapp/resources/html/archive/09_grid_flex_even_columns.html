@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test7</title>
+    <style>
+        html {
+            font-size:62.5%;
+        }
+
+        .wrapper {
+            width: 80%;
+            padding: 10px;
+            background-color: chartreuse;
+            margin: auto;
+            display: grid;
+            grid-auto-rows: 1fr;
+            gap: 10px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: orange;
+            text-align: justify;
+            justify-content: flex-end;
+            column-gap: 10px;
+        }
+
+        .sidebar {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            align-items: flex-start;
+            gap: 10px;
+            /*width: max-content;*/
+        }
+
+        .content > div:first-child {
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 70%;
+            /*width: ;*/
+        }
+
+        .content > div:last-child {
+            /*flex-shrink: 0;*/
+            /*flex-grow: 0;*/
+            /*flex-shrink: 1;*/
+            /*flex-basis: 30%;*/
+        }
+
+        .content > * {
+            background-color: cornflowerblue;
+            border: 1px solid firebrick;
+        }
+
+        a {
+            display: inline-block;
+            background-color: greenyellow;
+            border: 1px solid blueviolet;
+            white-space: nowrap;
+        }
+
+
+        .grid-container {
+            width: 80%;
+            padding: 10px;
+            margin: auto;
+            background-color: orangered;
+            display: grid;
+            /*justify-items: flex-end;*/
+            /*grid-auto-flow: column;*/
+            /*grid-auto-columns:1fr;*/
+            /*grid-template-columns: repeat(auto-fit, 500px);*/
+            column-gap: 10px;
+        }
+
+        .item-1 {
+            width: max-content;
+        }
+
+        .item-2 {
+            grid-column: -1;
+        }
+
+        @media (min-width: 500px) {
+            .grid-container {
+                grid-auto-flow: column;
+            }
+        }
+
+
+        .grid-container > * {
+            background-color: orchid;
+            border: 1px solid darkslategray;
+        }
+
+        .box {
+            background: grey;
+            padding: 5px;
+            /*width: 70px;*/
+        }
+
+        .span {
+            grid-column: auto / span 2;
+        }
+
+    </style>
+</head>
+<body>
+<h2 style="font-size:3.5rem">
+    Title
+</h2>
+<div class="wrapper">
+    <div class="content">
+        <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nulla sem.
+            Praesent tincidunt semper arcu, vel sollicitudin neque finibus nec. Fusce imperdiet
+            id ligula vitae ullamcorper.
+        </div>
+        <div class="sidebar">
+            <a>Lorem</a>
+            <a>ipsum</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div>
+            Lorem
+        </div>
+        <div class="sidebar">
+            <a>Lorem</a>
+            <a>ipsum</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

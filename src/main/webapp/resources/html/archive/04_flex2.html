@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Space between flexbox</title>
+    <style>
+        .even-spaces {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            background-color: green;
+            padding: 2rem;
+            justify-content: space-between;
+            column-gap: 2rem;
+        }
+
+        .even-spaces-items {
+            background-color: white;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .even-columns {
+            display: flex;
+            background-color: yellow;
+            column-gap: 10px;
+            margin: auto;
+        }
+
+        .even-columns-items {
+            background-color: white;
+            text-align: center;
+            font-size: 40px;
+            flex: none;
+            /*flex:1;*/
+        /*    flex-grow: 1;*/
+        /*    flex-basis: 100%;*/
+        }
+
+        .col     {
+            position: relative;
+        }
+    </style>
+</head>
+
+<div class="even-spaces">
+    <div class="even-spaces-items">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac ornare nunc. Suspendisse consectetur
+        molestie risus id tincidunt. Vivamus mattis aliquam nibh, ut ornare quam placerat quis. Phasellus mi dolor,
+        eleifend quis lectus eget, dictum dictum magna. Praesent pellentesque diam eu mattis finibus.
+    </div>
+    <div class="col">
+        <div class="even-columns">
+            <div class="even-columns-items">Lorem</div>
+            <div class="even-columns-items">adipiscing</div>
+        </div>
+    </div>
+</div>
+</html>

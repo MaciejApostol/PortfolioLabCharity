@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test9</title>
+    <style>
+        .container6 {
+            display: inline-grid;
+        }
+
+        .container6-1 {
+            display: grid;
+            grid-template-columns:repeat(auto-fit, var(--w));
+            grid-gap: 10px;
+        }
+
+        .item6 {
+            background: yellow;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container6">
+    <a class="item6">test</a>
+    <a class="item6">longer test</a>
+</div>
+</body>
+<script>
+    const width = window.getComputedStyle(document.querySelector(".item6")).width;
+    document.querySelector(".container6").classList.add("container6-1")
+    document.querySelector(".container6").style.setProperty("--w", width);
+</script>
+</html>

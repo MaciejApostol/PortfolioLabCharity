@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test7</title>
+    <style>
+        .even-columns {
+            --w: 0;
+            display: inline-block;
+            grid-template-columns:repeat(auto-fit, var(--w));
+            grid-gap: 10px;
+        }
+
+        .even-columns > * {
+            white-space: nowrap;
+            display: inline-block;
+        }
+
+        .item {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="even-columns">
+        <a class="item">
+            An item with
+        </a>
+        <a class="item">
+            Short item very long
+        </a>
+        <a class="item">
+            another item
+        </a>
+    </div>
+</div>
+</body>
+<script>
+    const container = document.querySelector(".even-columns");
+    let maxWidth = 0;
+    container.querySelectorAll("a").forEach(function (element) {
+        const width = window.getComputedStyle(element).width.replace("px", "");
+        if (width > maxWidth) {
+            maxWidth = width;
+        }
+    })
+    container.style.setProperty("--w", maxWidth + "px")
+    container.style.display = "grid";
+</script>
+</html>

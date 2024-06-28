@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <style>
+        .even-columns {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .even-columns > * {
+            flex: 1;
+        }
+
+        /* added to help visualize the widths */
+        /* .even-columns > *:nth-child(2n + 1) {
+          outline: 1px solid blue;
+        } */
+
+        /* =========================
+           GENERAL STYLES
+           NOT RELATED TO THE TUTORIAL
+        ============================ */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --clr-primary: #ee6352;
+            --clr-secondary: #d16e8d;
+            --clr-accent: #f7f7ff;
+            --clr-gradient: linear-gradient(
+                    -90deg,
+                    var(--clr-primary),
+                    var(--clr-secondary)
+            );
+            --ff-title: bungee, sans-serif;
+            --ff-body: canada-type-gibson, sans-serif;
+            --fw-body: 300;
+            --fw-bold: 800;
+            --fw-title: 400;
+            --fw-number: 800;
+        }
+
+        body {
+            padding: 2rem;
+            min-height: 100vh;
+            font-family: var(--ff-body);
+            font-weight: var(--fw-body);
+            font-size: 1.25rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--clr-accent);
+        }
+
+        :focus {
+            outline: 5px solid var(--clr-accent);
+            outline-offset: 3px;
+        }
+
+        .container {
+            width: min(95%, 45rem);
+            margin: 0 auto;
+        }
+
+        .col,
+        .card {
+            position: relative;
+        }
+
+        .width-indicator {
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 1em 2em;
+            box-shadow: 0 0 0.5em hsl(0 0% 0% / 0.2);
+            background: white;
+            color: black;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            top: 50%;
+            z-index: 999999;
+            transform: scale(0.9);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="even-columns">
+
+    <div class="col">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione fugiat atque libero, unde consequuntur
+            aspernatur?</p>
+        <p class="width-indicator"></p>
+    </div>
+    <div class="col">
+        <h3>Lorem, ipsum dolor.</h3>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <p class="width-indicator"></p>
+
+    </div>
+    <div class="col">
+        <h3>Nemo, odit minus?</h3>
+        <p>Excepturi ipsa quasi ut quo illo in velit architecto alias, deserunt facilis corrupti, earum tempora?</p>
+        <p class="width-indicator"></p>
+
+    </div>
+
+</div>
+<script>
+    const widthIndicator = document.querySelectorAll(".width-indicator");
+
+    const addWidth = (el) => {
+        el.textContent = "width: " + el.offsetWidth + "px";
+    };
+
+    const showSizes = () => {
+        widthIndicator.forEach((indicator) => addWidth(indicator));
+    };
+
+    window.onload = showSizes;
+    window.onresize = showSizes;
+</script>
+
+</body>
+</html>

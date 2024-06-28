@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../resources/css/style.css"/>
+    <style>
+        select:required:invalid {
+            color: gray;!important;
+        }
+
+        option[value=""][disabled] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<header class="header--main-page">
+    <div class="slogan container container--85">
+        <div class="slogan--item">
+            <h2>
+                Dodaj admina:
+            </h2>
+            <form modelAttribute="admin" method="post" novalidate="validate" cssClass="form-text">
+                <div class="form-section form-section--columns edit-form ">
+                    <div class="form-section--column">
+                        <div class="form-group form-group--inline">
+                            <label>
+                                Nazwa <input path="username" placeholder="Nazwa administartora" required="true"
+                                             minlength="3" value="${admin.username}"/>
+                                <div class="invalid-feedback">
+                                    Podaj poprawną nazwę.
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-group form-group--inline form-group--select">
+                            <label>
+                                Email <select name="email" required>
+                                <option value="" disabled selected>Wybierz użytkownika</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="volvo">Volvo</option>
+                            </select>
+                                <div class="invalid-feedback">
+                                    Podany adres email nie został znaleziony
+                                    lub jest już zarejestrowany jako administrator.
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-group form-group--buttons">
+                            <a href="${pageContext.request.contextPath}/show-admins"
+                               class="btn btn--highlighted" type="submit">Anuluj</a>
+                            <button class="btn btn--highlighted" type="submit">Potwierdź</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
+
+</body>
+</html>

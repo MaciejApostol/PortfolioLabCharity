@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test11</title>
+    <style>
+        .test-wrapper-3 {
+            container-type: inline-size;
+            resize: horizontal;
+            overflow: auto;
+            margin: 0 auto;
+        }
+
+        .c-input {
+            border: none;
+            appearance: none;
+            box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(0, 170, 188, 0.16);
+            border-radius: 29px;
+            font-size: 18px;
+            padding: 12px 24px;
+            width: 100%;
+            resize: none;
+            transition: border 0.5s;
+        }
+
+        .c-button {
+            appearance: none;
+            justify-self: start;
+            border-radius: 100px;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            background: #01aabc;
+            border: none;
+            outline: none;
+            display: inline-block;
+            transition: 0.3s ease-out;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .newsletter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            /*background-color: #f7f7f7;*/
+            margin: 10rem auto 3rem;
+            padding: 1rem;
+            outline-offset: 3px;
+            background: blue;
+        }
+
+        .newsletter h2 {
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .newsletter p {
+            display: none;
+        }
+
+        .newsletter form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 0 1 400px;
+        }
+
+        .newsletter .c-button {
+            min-width: 120px;
+            width: 100%;
+        }
+
+
+        @container (min-width: 400px) {
+            .newsletter {
+                background: green;
+            }
+
+            /*.newsletter form {*/
+            /*    flex-direction: row;*/
+            /*    align-items: flex-start;*/
+            /*}*/
+            /*.newsletter h2 {*/
+            /*    font-size: 2rem;*/
+            /*}*/
+            /*.newsletter p {*/
+            /*    display: block;*/
+            /*}*/
+            /*.newsletter .c-input-group {*/
+            /*    flex: 1;*/
+            /*}*/
+            /*.newsletter .c-button {*/
+            /*    width: unset;*/
+            /*    align-self: normal;*/
+            /*}*/
+        }
+
+
+        @container (min-width: 600px) {
+            .newsletter {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+                background: red;
+            }
+        }
+
+        .note {
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 1rem;
+            /*font-family: "Rubik",fantasy;*/
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="test-wrapper-3">
+    <div class="newsletter">
+        <div>
+            <h2>test</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="test-wrapper-3">
+    <div class="newsletter">
+        <div>
+            <h2>Subscribe and get my new articles</h2>
+            <p>No spam, I promise.</p>
+        </div>
+
+        <form action="">
+            <div class="c-input-group">
+                <label for="newsletter" class="c-label sr-only"></label>
+                <input type="text" class="c-input" id="newsletter" placeholder="mail@example.com"/>
+            </div>
+            <button class="c-button">I'm in</button>
+        </form>
+    </div>
+</div>
+
+<div class="note">
+    <p>This is a demo from the <a href="http://ishadeed.com/article/say-hello-to-css-container-queries/">container
+        queries</a> article by Ahmad Shadeed</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test8</title>
+    <style>
+        html>*{
+            box-sizing: border-box;
+        }
+
+        .img-wrapper {
+            display: inline-flex;
+            height: 100%;
+            width: 50%;
+            align-items: flex-start;
+            /*position: relative;*/
+            /*z-index: -1;*/
+        }
+
+        .img {
+            width: 50vw;
+            /*position: absolute;*/
+        }
+
+        .no-decoration {
+            position: absolute;
+        }
+
+        .container {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .navi,
+        .infoi {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .infoi {
+            z-index: 10;
+        }
+
+        .zero{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid orange;
+            min-height: 80vh;
+            width: 80%;
+        }
+
+        .first {
+            /*width: 1000px;*/
+            height: 250px;
+            /*position:absolute;*/
+            border: 1px solid red;
+        }
+
+        .second {
+            border: 2px solid blue;
+            /*height: 100px;*/
+            flex-grow: 1;
+        }
+
+        .third {
+            /*box-sizing: border-box;*/
+
+            border: 2px solid green;
+            width: 700px;
+            height: 200px;
+            position:relative;
+            left: 1000px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="zero">
+    <div class="first">test</div>
+    <div class="second"></div>
+</div>
+<!--<div class="third"></div>-->
+
+<!--<div id="container">-->
+<!--    <div id="navi">a</div>-->
+<!--    <div id="infoi">-->
+<!--        <img src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png" height="150"/>b-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<div class="img-wrapper">-->
+<!--  <img src="../../resources/images/header-bg.jpg" class="img" alt="header-bg">-->
+<!--</div>-->
+<!--<div class="test">-->
+<!--  test-->
+<!--</div>-->
+</body>
+</html>
